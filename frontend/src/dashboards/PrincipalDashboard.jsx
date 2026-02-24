@@ -284,7 +284,7 @@ const teacherStats = {
           {/* PAGE HEADER WITH LIVE TIME AND SEARCH - Updated to match StaffDashboard */}
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
             <div>
-              <h1 className="text-2xl font-bold text-gray-800">Principal Da</h1>
+              <h1 className="text-2xl font-bold text-gray-800">Principal Dashboard</h1>
               <p className="text-gray-600 mt-1">{getGreeting()}, Principal</p>
             </div>
             
