@@ -63,7 +63,7 @@ const [selectedSection, setSelectedSection] = useState("A");
     }
     setIsSearching(true);
     try {
-      const res = await fetch(`http://localhost:5002/api/timetable/search?query=${encodeURIComponent(query)}`, {
+      const res = await fetch(`https://api.kodebloom.com/api/timetable/search?query=${encodeURIComponent(query)}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }

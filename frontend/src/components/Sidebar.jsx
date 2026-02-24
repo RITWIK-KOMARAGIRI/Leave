@@ -22,7 +22,7 @@ const Sidebar = () => {
   const logout = async () => {
     try {
       const token = localStorage.getItem("token");
-      await fetch("http://localhost:5002/api/auth/logout", {
+      await fetch("https://api.kodebloom.com/api/auth/logout", {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` }
       });

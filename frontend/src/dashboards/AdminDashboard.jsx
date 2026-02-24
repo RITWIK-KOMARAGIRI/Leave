@@ -86,7 +86,7 @@ const AdminDashboard = () => {
       );
       
       const queryParams = new URLSearchParams(filteredFilters).toString();
-      const url = queryParams ? `http://localhost:5002/api/admin/logs?${queryParams}&limit=10` : `http://localhost:5002/api/admin/logs?limit=10`;
+      const url = queryParams ? `https://api.kodebloom.com/api/admin/logs?${queryParams}&limit=10` : `http://localhost:5002/api/admin/logs?limit=10`;
       
       const token = localStorage.getItem("token");
       const res = await fetch(url, {
@@ -106,7 +106,7 @@ const AdminDashboard = () => {
   const fetchPrincipals = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5002/api/admin/principals", {
+      const res = await fetch("https://api.kodebloom.com/api/admin/principals", {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -120,7 +120,7 @@ const AdminDashboard = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5002/api/admin/create-principal", {
+      const res = await fetch("https://api.kodebloom.com/api/admin/create-principal", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
@@ -145,7 +145,7 @@ const AdminDashboard = () => {
   const handleActivatePrincipal = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5002/api/admin/approve-principal/${id}`, {
+      const res = await fetch(`https://api.kodebloom.com/api/admin/approve-principal/${id}`, {
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -162,7 +162,7 @@ const AdminDashboard = () => {
     if (!window.confirm("Are you sure you want to delete this Principal? This action cannot be undone.")) return;
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5002/api/admin/delete-principal/${id}`, {
+      const res = await fetch(`https://api.kodebloom.com/api/admin/delete-principal/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -179,7 +179,7 @@ const AdminDashboard = () => {
     try {
       const queryParams = new URLSearchParams(logFilters).toString();
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5002/api/admin/logs/pdf?${queryParams}`, {
+      const res = await fetch(`https://api.kodebloom.com/api/admin/logs/pdf?${queryParams}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (res.ok) {
@@ -200,7 +200,7 @@ const AdminDashboard = () => {
   const handleLogout = async () => {
     try {
       const token = localStorage.getItem("token");
-      await fetch("http://localhost:5002/api/auth/logout", {
+      await fetch("https://api.kodebloom.com/api/auth/logout", {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -216,7 +216,7 @@ const AdminDashboard = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5002/api/admin/update-profile", {
+      const res = await fetch("https://api.kodebloom.com/api/admin/update-profile", {
         method: "PUT",
         headers: { 
           "Content-Type": "application/json",
@@ -246,7 +246,7 @@ const AdminDashboard = () => {
     }
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5002/api/admin/change-password", {
+      const res = await fetch("https://api.kodebloom.com/api/admin/change-password", {
         method: "PUT",
         headers: { 
           "Content-Type": "application/json",

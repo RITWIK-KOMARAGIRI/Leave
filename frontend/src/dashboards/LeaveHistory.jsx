@@ -51,7 +51,7 @@ const upcomingLeaves = leaveHistory.filter(
 
 useEffect(() => {
   const fetchStudents = async () => {
-    const res = await fetch("http://localhost:5000/api/students");
+    const res = await fetch("https://api.kodebloom.com/api/students");
     const data = await res.json();
 
     console.log("STUDENTS:", data);

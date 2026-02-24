@@ -5,9 +5,15 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
+        host: true,
+    allowedHosts: [
+      "mernstack.kodebloom.com",
+      ".trycloudflare.com",
+      "localhost"
+    ],
     proxy: {
       "/api": {
-        target: "http://localhost:5002",
+        target: "https://api.kodebloom.com",
         changeOrigin: true,
         secure: false,
       },

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5002/api/staff",
+  baseURL: "https://api.kodebloom.com/api/staff",
 });
 
 // Add request interceptor to include auth token

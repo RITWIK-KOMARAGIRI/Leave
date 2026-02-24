@@ -32,7 +32,7 @@ const StaffDashboard = () => {
         const today = new Date().toISOString().split("T")[0];
 
         // 1. Fetch Dashboard Stats
-        const statsRes = await fetch(`http://localhost:5002/api/attendance/summary?date=${today}`, {
+        const statsRes = await fetch(`https://api.kodebloom.com/api/attendance/summary?date=${today}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         const statsData = await statsRes.json();

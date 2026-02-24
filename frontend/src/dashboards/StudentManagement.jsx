@@ -41,7 +41,7 @@ export default function Students() {
       // Trigger fetch immediately when search comes from navigation
       const params = new URLSearchParams();
       params.append("search", location.state.search);
-      fetch(`http://localhost:5002/api/students?${params.toString()}`, {
+      fetch(`https://api.kodebloom.com/api/students?${params.toString()}`, {
         headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
       })
       .then(res => res.json())
@@ -120,7 +120,7 @@ const fetchStudents = async () => {
     if (selectedClass) params.append("class", selectedClass);
     if (selectedSection) params.append("section", selectedSection);
 
-    const res = await fetch(`http://localhost:5002/api/students?${params.toString()}`, {
+    const res = await fetch(`https://api.kodebloom.com/api/students?${params.toString()}`, {
       headers: {
         "Authorization": `Bearer ${localStorage.getItem("token")}`
       }
@@ -195,7 +195,7 @@ if (
 }
 
   try {
-    const res = await fetch("http://localhost:5002/api/students", {
+    const res = await fetch("https://api.kodebloom.com/api/students", {
       method: "POST",
       headers: { 
         "Content-Type": "application/json",
@@ -244,7 +244,7 @@ if (
  const handleUpdateStudent = async () => {
   try {
     const res = await fetch(
-      `http://localhost:5002/api/students/${editingStudent._id}`,
+      `https://api.kodebloom.com/api/students/${editingStudent._id}`,
       {
         method: "PUT",
         headers: { 
@@ -269,7 +269,7 @@ if (
 
  const handleDeleteStudent = async (id) => {
   try {
-    await fetch(`http://localhost:5002/api/students/${id}`, {
+    await fetch(`https://api.kodebloom.com/api/students/${id}`, {
       method: "DELETE",
       headers: {
         "Authorization": `Bearer ${localStorage.getItem("token")}`

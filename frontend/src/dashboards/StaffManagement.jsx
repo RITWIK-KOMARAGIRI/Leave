@@ -84,7 +84,7 @@ useEffect(() => {
 
 const fetchTeachers = async (query = "") => {
   try {
-    const url = query ? `http://localhost:5002/api/staff?search=${encodeURIComponent(query)}` : "http://localhost:5002/api/staff";
+    const url = query ? `https://api.kodebloom.com/api/staff?search=${encodeURIComponent(query)}` : "https://api.kodebloom.com/api/staff";
     const res = await fetch(url, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -210,8 +210,8 @@ const handleSubmit = async (e) => {
 
   try {
     const url = editingId
-      ? `http://localhost:5002/api/staff/${editingId}`
-      : "http://localhost:5002/api/staff";
+      ? `https://api.kodebloom.com/api/staff/${editingId}`
+      : "https://api.kodebloom.com/api/staff";
 
     const method = editingId ? "PUT" : "POST";
 
@@ -262,7 +262,7 @@ const handleSubmit = async (e) => {
 
  const handleDeleteConfirm = async () => {
   try {
-    await fetch(`http://localhost:5002/api/staff/${teacherToDelete._id}`, {
+    await fetch(`https://api.kodebloom.com/api/staff/${teacherToDelete._id}`, {
       method: "DELETE",
     });
 
@@ -277,7 +277,7 @@ const handleSubmit = async (e) => {
 
 const handleBulkDelete = async () => {
   try {
-    await fetch("http://localhost:5002/api/staff/bulk-delete", {
+    await fetch("https://api.kodebloom.com/api/staff/bulk-delete", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ids: selectedTeachers }),

@@ -33,7 +33,7 @@ const PrincipalDashboard = () => {
   const fetchSchedule = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5002/api/timetable/today", {
+      const res = await fetch("https://api.kodebloom.com/api/timetable/today", {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -48,7 +48,7 @@ const PrincipalDashboard = () => {
   const fetchLogs = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5002/api/admin/logs?limit=5", {
+      const res = await fetch("https://api.kodebloom.com/api/admin/logs?limit=5", {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -63,7 +63,7 @@ const PrincipalDashboard = () => {
   const fetchAnnouncements = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5002/api/announcements", {
+      const res = await fetch("https://api.kodebloom.com/api/announcements", {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -108,7 +108,7 @@ const PrincipalDashboard = () => {
 const fetchStudents = async () => {
   try {
     const token = localStorage.getItem("token");
-    const res = await fetch("http://localhost:5002/api/students", {
+    const res = await fetch("https://api.kodebloom.com/api/students", {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -128,7 +128,7 @@ const fetchTodayAttendance = async () => {
     const today = new Date().toISOString().split("T")[0];
     const token = localStorage.getItem("token");
 
-    const res = await fetch(`http://localhost:5002/api/attendance/summary?date=${today}`, {
+    const res = await fetch(`https://api.kodebloom.com/api/attendance/summary?date=${today}`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -202,7 +202,7 @@ const studentStats = {
 const fetchTeachers = async () => {
   try {
     const token = localStorage.getItem("token");
-    const res = await fetch("http://localhost:5002/api/staff", {
+    const res = await fetch("https://api.kodebloom.com/api/staff", {
       headers: {
         Authorization: `Bearer ${token}`
       }

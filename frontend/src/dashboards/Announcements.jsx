@@ -35,7 +35,7 @@ const Announcements = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5002/api/announcements", {
+      const res = await fetch("https://api.kodebloom.com/api/announcements", {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -59,7 +59,7 @@ const Announcements = () => {
 
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5002/api/announcements", {
+      const res = await fetch("https://api.kodebloom.com/api/announcements", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
@@ -87,7 +87,7 @@ const Announcements = () => {
   const handleUpdateAnnouncement = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5002/api/announcements/${id}`, {
+      const res = await fetch(`https://api.kodebloom.com/api/announcements/${id}`, {
         method: "PUT",
         headers: { 
           "Content-Type": "application/json",
@@ -118,7 +118,7 @@ const Announcements = () => {
 
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5002/api/announcements/${id}`, {
+      const res = await fetch(`https://api.kodebloom.com/api/announcements/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` }
       });

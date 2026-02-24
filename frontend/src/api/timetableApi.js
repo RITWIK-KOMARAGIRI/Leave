@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5002/api/timetable",
+  baseURL: "https://api.kodebloom.com/api/timetable",
 });
 
 // Add request interceptor to include auth token

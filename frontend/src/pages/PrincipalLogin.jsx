@@ -24,7 +24,7 @@ export default function PrincipalLogin() {
     }
     
     try {
-      const response = await fetch("http://localhost:5002/api/auth/login/principal", {
+      const response = await fetch("https://api.kodebloom.com/api/auth/login/principal", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
